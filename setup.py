@@ -8,5 +8,5 @@ setup(
     license='MIT',
     author='Edgar',
     author_email='',
-    description='Get information about teeworlds/ddnet servers. '
+    description='Get information about teeworlds/ddnet servers.'
 )
