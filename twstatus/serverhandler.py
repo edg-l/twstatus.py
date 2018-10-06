@@ -1,7 +1,6 @@
 import socket
 import os
 import sys
-import struct
 from .serverinfo import ServerInfo
 from .player import Player
 

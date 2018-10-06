@@ -9,5 +9,8 @@ import asyncio
 
 server = ServerHandler("1.1.1.1", 8303)
 
-asyncio.run(server.get_info())
+async def main():
+    print(vars(await server.get_info()))
+
+asyncio.run(main())
 ```
