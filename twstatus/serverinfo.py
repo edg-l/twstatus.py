@@ -31,3 +31,6 @@ class ServerInfo:
 
         if self.players is None:
             self.players: List[Player] = []
+
+    def __str__(self):
+        return f"{self.name} [{self.player_count}/{self.max_player_count}]"

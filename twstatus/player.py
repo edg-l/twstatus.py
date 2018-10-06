@@ -10,3 +10,6 @@ class Player:
         self.country = country
         self.score = score
         self.is_spectator = is_spectator
+
+    def __str__(self):
+        return f"{self.name} [{self.clan}]"
