@@ -23,7 +23,7 @@ class ServerHandler:
                  address: str,
                  port: int=8303,
                  ignore_token: bool=False,
-                 timeout: int=100):
+                 timeout: int=5):
         self.address = address
         self.port = port
         self.ignore_token = ignore_token
@@ -31,7 +31,7 @@ class ServerHandler:
 
     async def get_info(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.settimeout(6)
+        sock.settimeout(self.timeout)
         data, token, extra_token = create_info_packet()
 
         extra_token = int.from_bytes(extra_token, byteorder=sys.byteorder)
