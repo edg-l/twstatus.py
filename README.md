@@ -3,6 +3,8 @@
 
 Tested on vanilla and ddnet based servers.
 
+`pip install twstatus.py`
+
 ```python
 from twstatus import ServerHandler
 import asyncio
