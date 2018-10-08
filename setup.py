@@ -1,9 +1,8 @@
-from pygments.lexers._openedge_builtins import OPENEDGEKEYWORDS
 from setuptools import setup
 
 setup(
     name='twstatus.py',
-    version='0.1.1',
+    version='0.1.2',
     packages=["twstatus"],
     url='https://github.com/Ryozuki/twstatus.py',
     license='MIT',
