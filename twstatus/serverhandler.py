@@ -39,8 +39,11 @@ class ServerHandler:
 
         sock.sendto(data, (self.address, self.port))
 
-        data, (address, port) = sock.recvfrom(4096)
-        print(len(data))
+        try:
+            data, (address, port) = sock.recvfrom(4096)
+        except socket.timeout:
+            return None
+
         sock.close()
         if address != self.address:
             return
