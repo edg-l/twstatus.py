@@ -14,5 +14,7 @@ server = ServerHandler("1.1.1.1", 8303)
 async def main():
     print(vars(await server.get_info()))
 
+# Note: asyncio.run is only available on 3.7+
+# https://docs.python.org/3/library/asyncio-task.html#id3
 asyncio.run(main())
 ```
