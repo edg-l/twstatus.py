@@ -94,7 +94,7 @@ class ServerHandler:
         if svtype == "ext":
             slots.pop(0)  # reserved
 
-        for i in range(info.player_count):
+        for i in range(info.client_count):
             info.players.append(Player(slots.pop(0).decode(),
                                        slots.pop(0).decode(),
                                        int(slots.pop(0)),
