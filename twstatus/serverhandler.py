@@ -15,7 +15,7 @@ def create_info_packet():
         data.append(0xff)
     data.extend(map(ord, "gie3"))
     data += token
-    return data, token, extra_token
+    return data, int.from_bytes(token, byteorder=sys.byteorder), int.from_bytes(extra_token, byteorder=sys.byteorder)
 
 
 class ServerHandler:
@@ -33,9 +33,6 @@ class ServerHandler:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.settimeout(self.timeout)
         data, token, extra_token = create_info_packet()
-
-        extra_token = int.from_bytes(extra_token, byteorder=sys.byteorder)
-        token = int.from_bytes(token, byteorder=sys.byteorder)
 
         sock.sendto(data, (self.address, self.port))
 
