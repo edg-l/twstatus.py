@@ -83,7 +83,7 @@ class ServerHandler:
                 info.mapsize = int(slots.pop(0))
 
             info.game_type = slots.pop(0).decode()
-            info.password = int.from_bytes(slots.pop(0), sys.byteorder) == 1
+            info.password = int(slots.pop(0)) == 1
             info.player_count = int(slots.pop(0))
             info.max_player_count = int(slots.pop(0))
             info.client_count = int(slots.pop(0))
