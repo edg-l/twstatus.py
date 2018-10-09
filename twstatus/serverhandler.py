@@ -29,8 +29,9 @@ class ServerHandler:
         self.ignore_token = ignore_token
         self.timeout = timeout
 
-    async def get_info(self):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    async def get_info(self, sock: socket.socket=None, close_socket: bool=True):
+        if sock is None:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.settimeout(self.timeout)
         data, token, extra_token = create_info_packet()
 
@@ -41,7 +42,8 @@ class ServerHandler:
         except socket.timeout:
             return None
         finally:
-            sock.close()
+            if close_socket:
+                sock.close()
 
         if address != self.address:
             return
