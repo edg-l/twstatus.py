@@ -43,8 +43,9 @@ class ServerHandler:
             data, (address, port) = sock.recvfrom(4096)
         except socket.timeout:
             return None
+        finally:
+            sock.close()
 
-        sock.close()
         if address != self.address:
             return
 
