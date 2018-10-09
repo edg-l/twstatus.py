@@ -33,4 +33,4 @@ class ServerInfo:
             self.players: List[Player] = []
 
     def __str__(self):
-        return f"{self.name} [{self.player_count}/{self.max_player_count}]"
+        return f"{self.name} [{self.player_count}/{self.max_client_count}]"

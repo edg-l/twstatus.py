@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='twstatus.py',
-    version='0.3.0',
+    version='0.3.1',
     packages=["twstatus"],
     url='https://github.com/Ryozuki/twstatus.py',
     license='MIT',

@@ -38,7 +38,7 @@ class ServerHandler:
         sock.sendto(data, (self.address, self.port))
 
         try:
-            data, (address, port) = sock.recvfrom(4096)
+            data, (address, port) = sock.recvfrom(1024*2)
         except socket.timeout:
             return None
         finally:
