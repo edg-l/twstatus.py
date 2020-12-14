@@ -2,12 +2,12 @@ from setuptools import setup
 
 setup(
     name='twstatus.py',
-    version='0.3.1',
+    version='0.3.2',
     packages=["twstatus"],
-    url='https://github.com/Ryozuki/twstatus.py',
+    url='https://github.com/edg-l/twstatus.py',
     license='MIT',
     author='Edgar',
-    author_email='',
+    author_email='git@edgarluque.com',
     description='Get information about teeworlds/ddnet servers.',
     zip_safe=False,
     keywords=['teeworlds', 'servers', 'info', 'asyncio'],
