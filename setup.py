@@ -1,14 +1,22 @@
 from setuptools import setup
+from os import path
+
+this_dir = path.abspath(path.dirname(__file__))
+
+with open(path.join(this_dir, 'README.md')) as f:
+    long_description = f.read()
 
 setup(
     name='twstatus.py',
-    version='0.3.2',
+    version='0.3.3',
     packages=["twstatus"],
     url='https://github.com/edg-l/twstatus.py',
     license='MIT',
     author='Edgar',
     author_email='git@edgarluque.com',
     description='Get information about teeworlds/ddnet servers.',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     zip_safe=False,
     keywords=['teeworlds', 'servers', 'info', 'asyncio'],
     python_requires='>=3.6',
